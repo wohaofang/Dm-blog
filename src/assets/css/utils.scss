@@ -1,0 +1,36 @@
+@function Rem($now) {
+    @return ($now / 75)+rem;
+}
+
+// 尺寸
+@mixin whlb($w, $h:auto, $l:auto, $b:0) {
+    width: $w;
+    height: $h;
+    line-height: $l;
+    border-radius: $b;
+}
+
+// 位置
+@mixin pltrb($p:absolute, $l:auto, $t:auto, $r:auto, $b:auto) {
+    position: $p;
+    left: $l;
+    top: $t;
+    right: $r;
+    bottom: $b;
+}
+
+// 文字
+@mixin fctwf($fs:.28rem, $col:#ccc, $t:left, $fw:400, $fa:"微软雅黑") {
+    font-size: $fs;
+    color: $col;
+    text-align: $t;
+    font-weight: $fw;
+    font-family: $fa;
+}
+
+.overflow-ellipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   // display: inline-block;
+}

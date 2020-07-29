@@ -1,0 +1,47 @@
+/**
+ *  本文件主要放各种sass的function或者mixin，可以直接在.vue中的sass使用
+ */
+
+/**
+  * 主要是给border为0.5的时候使用的，当只有一条border或者border需要全部设置的画建议使用下面几个方法
+  */
+  @mixin border-hack($color: #e7e7e7, $d1: none, $d2: none, $d3: none, $d4: none) {
+    position: relative;
+    &::after{
+      content: '';
+      transform: scale(0.5);
+      position: absolute;
+      left: -50%;
+      right: -50%;
+      top: -50%;
+      bottom: -50%;
+      @if($d1 == 'left' or $d2 == 'left' or $d3 == 'left' or $d4 == 'left'){
+        border-left: 1PX solid $color;
+      } 
+      @if ($d1 == 'right' or $d2 == 'right' or $d3 == 'right' or $d4 == 'right') {
+        border-right: 1PX solid $color;
+      } 
+      @if ($d1 == 'top' or $d2 == 'top' or $d3 == 'top' or $d4 == 'top') {
+        border-top: 1PX solid $color;
+      } 
+      @if ($d1 == 'bottom' or $d2 == 'bottom' or $d3 == 'bottom' or $d4 == 'bottom') {
+        border-bottom: 1PX solid $color;
+      }
+    }
+  }
+  
+  @mixin border-hack-top($color: #e7e7e7) {
+    @include border-hack($color, top);
+  }
+  @mixin border-hack-right($color: #e7e7e7) {
+    @include border-hack($color, right);
+  }
+  @mixin border-hack-bottom($color: #e7e7e7) {
+    @include border-hack($color, bottom);
+  }
+  @mixin border-hack-left($color: #e7e7e7) {
+    @include border-hack($color, left);
+  }
+  @mixin border-hack-all($color: #e7e7e7) {
+    @include border-hack($color, left, right, top, bottom);
+  }
