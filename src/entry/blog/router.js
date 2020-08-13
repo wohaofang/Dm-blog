@@ -4,6 +4,7 @@ import Router from 'vue-router';
 
 import all from '@/views/blog/all/index.vue'
 import blog from '@/views/blog/blog/index.vue'
+import categories from '@/views/blog/categories/index.vue'
 
 Vue.use(Router);
 
@@ -22,6 +23,10 @@ export default new Router({
     {
       path: '/blog',
       component: blog
+    },
+    {
+      path: '/categories',
+      component: categories
     },
   ]
 })
