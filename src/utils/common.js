@@ -35,4 +35,4 @@ Vue.prototype.$getSession = getSession
 Vue.prototype.$getString = getString
 
 
-console.log("\n欢迎踩点丁大铭的博客，在这里与你一起分享生活，分享技术。%c\n\n联系方式: ", "color:red");
+console.log("\n欢迎踩点丁大铭的博客，在这里与你一起分享生活，分享技术。%c\n\n联系方式: 1123 ", "color:red");

@@ -8,7 +8,8 @@ import about from '@/views/main/about/index.vue'
 Vue.use(Router);
 
 export default new Router({
-  base: '/',
+  mode: 'history',
+  base: '/main.html',
   routes: [
     {
       path: '*',
